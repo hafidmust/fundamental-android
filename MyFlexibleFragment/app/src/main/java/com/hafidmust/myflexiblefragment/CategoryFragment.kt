@@ -1,17 +1,18 @@
 package com.hafidmust.myflexiblefragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 
 
-class HomeFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -19,21 +20,14 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_category, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnCategory : Button = view.findViewById(R.id.btn_category)
-        btnCategory.setOnClickListener {
-            val mCategoryFragment = CategoryFragment()
-            val mFragmentManager = parentFragmentManager
-            mFragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, mCategoryFragment, CategoryFragment::class.java.simpleName)
-                addToBackStack(null)
-                commit()
-            }
+        val btnDetailCategory : Button = view.findViewById(R.id.btn_detail_category)
+        btnDetailCategory.setOnClickListener {
+
         }
     }
-
 }
