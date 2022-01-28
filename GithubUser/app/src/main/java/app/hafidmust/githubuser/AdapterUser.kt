@@ -4,14 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.hafidmust.githubuser.databinding.AdapterUserBinding
+import com.bumptech.glide.Glide
 
 class AdapterUser(var data : List<UsersItem>, val listener : EventListener) : RecyclerView.Adapter<AdapterUser.ViewHolder>() {
     interface EventListener{
         fun click(item : UsersItem)
     }
-    inner class ViewHolder(val binding : AdapterUserBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(private val binding : AdapterUserBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(usersItem: UsersItem){
-            binding.imgAvatar.setImageResource(usersItem.avatar)
+            Glide.with(binding.root)
+                .load(usersItem.avatar)
+                .into(binding.imgAvatar)
             binding.tvFullName.text = usersItem.name
             binding.tvUsername.text = usersItem.username
             binding.tvLocation.text = usersItem.company
@@ -31,8 +34,6 @@ class AdapterUser(var data : List<UsersItem>, val listener : EventListener) : Re
         holder.bind(data[position])
     }
 
-    override fun getItemCount(): Int {
-        return data.size
-    }
+    override fun getItemCount(): Int = data.size
 
 }

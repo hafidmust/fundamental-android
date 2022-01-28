@@ -8,6 +8,10 @@
     <string name="following">Following</string>
     <string name="title">Submission 1 BFAA</string>
     <string name="location">Location</string>
+    <string name="title_splash">Github User 1</string>
+    <string name="logo_digitalent">Logo Digitalent</string>
+    <string name="logo_dicoding">Logo Dicoding</string>
+    <string name="logo_kominfo">Logo Kominfo</string>
     <string-array name="username">
         <item>JakeWharton</item>
         <item>amitshekhariitbhu</item>
