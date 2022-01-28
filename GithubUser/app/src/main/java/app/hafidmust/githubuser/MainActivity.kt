@@ -1,8 +1,8 @@
 package app.hafidmust.githubuser
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import app.hafidmust.githubuser.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -116,10 +116,10 @@ class MainActivity : AppCompatActivity() {
 
 
         )
-        val userAdapter = AdapterUser(listUser,object : AdapterUser.EventListener{
+        val userAdapter = AdapterUser(listUser, object : AdapterUser.EventListener {
             override fun click(item: UsersItem) {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
-                    putExtra(DetailActivity.EXTRA_USER,item)
+                    putExtra(DetailActivity.EXTRA_USER, item)
                 }
                 startActivity(intent)
             }

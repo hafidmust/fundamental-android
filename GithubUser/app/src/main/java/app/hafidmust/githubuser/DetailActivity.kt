@@ -1,12 +1,12 @@
 package app.hafidmust.githubuser
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import app.hafidmust.githubuser.databinding.ActivityDetailBinding
 
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityDetailBinding
+    private lateinit var binding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

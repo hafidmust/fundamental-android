@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import app.hafidmust.githubuser.databinding.AdapterUserBinding
 import com.bumptech.glide.Glide
 
-class AdapterUser(var data : List<UsersItem>, val listener : EventListener) : RecyclerView.Adapter<AdapterUser.ViewHolder>() {
-    interface EventListener{
-        fun click(item : UsersItem)
+class AdapterUser(var data: List<UsersItem>, val listener: EventListener) :
+    RecyclerView.Adapter<AdapterUser.ViewHolder>() {
+    interface EventListener {
+        fun click(item: UsersItem)
     }
-    inner class ViewHolder(private val binding : AdapterUserBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(usersItem: UsersItem){
+
+    inner class ViewHolder(private val binding: AdapterUserBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(usersItem: UsersItem) {
             Glide.with(binding.root)
                 .load(usersItem.avatar)
                 .into(binding.imgAvatar)
@@ -24,6 +27,7 @@ class AdapterUser(var data : List<UsersItem>, val listener : EventListener) : Re
             }
         }
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = AdapterUserBinding.inflate(inflater)
