@@ -27,7 +27,20 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val btnDetailCategory : Button = view.findViewById(R.id.btn_detail_category)
         btnDetailCategory.setOnClickListener {
+            val mDetailCategoryFragment = DetailCategoryFragment()
+            val mBundle = Bundle()
+            mBundle.putString(DetailCategoryFragment.EXTRA_NAME, "Kesehatan")
+            val description = "Kategori ini akan berisi produk-produk kesehatan"
 
+            mDetailCategoryFragment.arguments = mBundle
+            mDetailCategoryFragment.description = description
+
+            val mFragmentManager = parentFragmentManager
+            mFragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, mDetailCategoryFragment, DetailCategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
         }
     }
 }
